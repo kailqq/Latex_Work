@@ -1,0 +1,144 @@
+\documentclass[UTF8]{article}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mismath}
+\usepackage{zhnumber}
+\usepackage{ctex}
+\title{2018--2019学年线性代数I (H) 期末答案 }
+\author{张晋恺}
+\date{2024年1月18日}
+\begin{document}
+\maketitle
+\leftline{一、}
+(1)求核空间即求使得$T(f(x))$为0矩阵的$f(x)$构成的空间,设$f(x)=ax^3+bx^2+cx+d$则有
+\begin{equation*}\begin{cases}f(0)=d=0\\f(1)=a+b+c+d=0\\f(2)=-a+b-c+d=0\end{cases}\end{equation*}
+令$a=t$有$f(x)=t(x^3-x)$,故$N(T)=L(x^3-x)$\\
+求像空间，取$\mathbf{R[x]_4}$的一组常用基$1,x,x^2,x^3$,
+\begin{equation*}
+T(1)=\left(\begin{matrix}
+    1&1\\1&1
+\end{matrix}\right)\quad
+T(x)=\left(\begin{matrix}
+    0&1\\-1&0
+\end{matrix}\right)\quad
+T(x^2)=\left(\begin{matrix}
+    0&1\\1&0
+\end{matrix}\right)\quad
+T(x^3)=\left(\begin{matrix}
+    0&1\\-1&0
+\end{matrix}\right)
+\end{equation*} 
+求它们的极大线性无关组,我们发现$T(x)=T(x^3)$,先丢弃$T(x^3)$,然后令
+
+\begin{equation*}
+    k_1T(1)+k_2T(2)+k_3T(x^2)=0\Rightarrow
+    \left(\begin{matrix}
+        k_1&k_1+k_2+k_3\\k_1-k_2+k_3&k_1
+    \end{matrix}\right)=0
+    \implies
+    \begin{cases}k_1=0\\k_1+k_2+k_3=0\\k_1-k_2+k_3=0\end{cases}   
+\end{equation*}
+故$T(1),T(x),T(x^2)$线性无关,故$R(T)=L\{T(1),T(x),T(x^2)\}$.\par
+(2)简单验证即可，略.
+\par
+
+\leftline{二、}
+(1)
+$B$为上三角矩阵,则特征值为对角线元素$2,0,1,9$,$A\backsim B$则有相同的特征值则$f(A)=A^2-9A+4E_4$
+的特征值为$f(\lambda_i)=-10,4,-4,4$行列式的值等于特征值的乘积,为640.\par
+(2)由于$A$有一个一重特征值0,故$A$不可逆,且$AX=0$的解空间维数为$n-r(A)=1$,故$r(A)=3,r(A^*)=1$
+而9也为一重特征值,同理有$r(9E-A)=3$故$r(A^*)+r(9E-A)=4$.
+\par
+\leftline{三、}
+(1)
+设$\delta=(x_1,x_2,x_3,x_4)$由正交的定义可知
+\begin{equation*}\begin{cases}
+    \alpha\delta=x_1+x_2+x_3+x_4=0\\
+    \beta\delta=-x_1-x_2+2x_4=0\\
+    \gamma\delta=x_1-x_2=0
+\end{cases}\Rightarrow\left(\begin{matrix}
+    1&1&1&1\\-1&-1&0&2\\1&-1&0&0
+\end{matrix}\right)\left(\begin{matrix}
+    x_1\\x_2\\x_3\\x_4
+\end{matrix}\right)=0
+\end{equation*}
+ 令$x_1=t$,解得$\delta=t(1,1,-3,1)$,又$\delta$为单位向量,$\Vert \delta \Vert=1 $,解得
+ $\delta=\pm\left(\dfrac{\sqrt{3}}{6},\dfrac{\sqrt{3}}{6},-\dfrac{\sqrt{3}}{2},\dfrac{\sqrt{3}}{6}\right)$.
+ \par
+ (2)
+$\alpha+\beta+\gamma+\delta=
+\left(1,-1,1,3\right)\pm
+\left(\dfrac{\sqrt{3}}{6},\dfrac{\sqrt{3}}{6},-\dfrac{\sqrt{3}}{2},\dfrac{\sqrt{3}}{6}\right)$
+故$\Vert\alpha+\beta+\gamma+\delta\Vert=\sqrt{13}$
+(事实上两种计算结果是一样的).
+\par
+\leftline{四、}
+(1)二次型的矩阵为
+$A=\left(\begin{matrix}
+    a&0&b\\0&2&0\\b&0&-2
+\end{matrix}\right),
+\text{设$A$的三个特征值为$\lambda_1,\lambda_2,\lambda_3$}$,
+由
+ \begin{equation*} \tr (A)=\dsum_{i=1}^{3}\lambda_i=a=1,a=1,\end{equation*}
+再由
+\begin{equation*}
+    \vert A\vert=\left\lvert
+\begin{matrix}
+    1&0&b\\0&2&0\\b&0&-2
+\end{matrix}\right\lvert =-2(2+b^2)=-12\text{且}b>0,\text{得}b=2.
+\end{equation*}
+\par
+(2)由$\vert\lambda E-A \vert=(\lambda+3)(\lambda-2)^{2}=0,\text{得},A\text{的特征值为}
+\lambda_1=-3,\lambda_2=\lambda_3=2$.\\
+方程组$(-3E-A)X=0,(2E-A)X=0$的基础解系为
+\begin{equation*}
+    \xi_1={(-1,0,2)}^{\mathrm{T}},\xi_2={(0,1,0)}^\mathrm{T},\xi_3
+={(2,0,1)}^\mathrm{T} 
+\end{equation*}
+正交规范化得\begin{equation*}
+    \gamma_1=\dfrac{1}{\sqrt{5}}{(-1,0,2)}^\mathrm{T},\gamma_2={(0,1,0)}^\mathrm{T},\gamma_3=\dfrac{1}{\sqrt{5}}{(2,0,1)}^\mathrm{T}
+\end{equation*}\\
+正交变换为$X=QY,\text{其中}Q=(\gamma_1,\gamma_2,\gamma_3)$.\par
+(3)$A$ \text{有负的特征值,非正定}.\\
+\leftline{五、}
+LALU例15.3,例15.4.\\
+\leftline{六、}
+取$\mathbf{R^3}\text{的一组基}\{e_1,e_2,e_3\}$,其中
+\begin{equation*}
+    e_1=(1,0,0),e_2=(0,1,0),e_3=(0,0,1)
+\end{equation*}
+则\begin{equation*}
+    T(e_1,e_2,e_3)=(e_1,e_2,e_3)\left(\begin{matrix}
+        4&0&1\\2&3&2\\1&0&4
+    \end{matrix}\right)
+\end{equation*}\\
+故特征多项式为$\left\lvert\begin{matrix}
+    4&0&1\\2&3&2\\1&0&4
+\end{matrix}\right\lvert={(\lambda-3)}^2(\lambda-5),\text{特征值}\lambda_1=\lambda_2=3,\lambda_3=5$.\par
+(2)对于$\lambda_1=\lambda_2=3\text{求得特征子空间为} \spa \{(0,1,0),(1,0,-1)\}$为二维的,而对于$\lambda_3$必有一一维子空间.
+故几何重数等于代数重数,$T$可对角化.
+\par
+\leftline{七、}
+$AX=0,\dim N(A)=n-r,AB=0,r(B)\leqslant n-r(A),\text{要使得}r(A)+r(B)=k,\text{即}r(B)\leqslant k-r(A)\leqslant n-r(A)$
+成立
+\par
+\leftline{八、}
+令
+$\dsum_{i = 1}^{s}=\lambda_i\alpha_i=0$
+我们知道$(A-\lambda E)\alpha_1=0$,且$(A-\lambda E)\alpha_{i+1}=\alpha_i$
+故我们有\\
+\begin{equation*}{(A-\lambda E)}^j\alpha_{i}=
+\begin{cases}
+    \alpha_{i-j},i-j \geqslant 1\\
+    0,\text{其他}
+\end{cases}\end{equation*}\\
+故作用${(A-\lambda E)}^{s-1}$有$\lambda_s\alpha_1=0$故$\lambda_s=0$
+以此类推,依次作用${(A-\lambda E)}^{s-i},i=1,2\ldots s-1$即可得到$\lambda_i=0$.
+\par
+九、
+(1)正确,因为A的特征值不为有理数.\\
+(2)错误,若存在这样两组向量,则两个空间正交,从而是直和,则5维欧式空间有6个线性无关的向量,矛盾.\\
+(3)正确,该式子结果只能为0,2,4.\\
+(4)正确,$A\text{有特征值10,其特征向量为}(1,1,1\ldots,1)$故$f(A)\text{有特征值}f(10)=2019$.
+\end{document}

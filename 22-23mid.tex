@@ -1,0 +1,51 @@
+\documentclass[UTF8]{article}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mismath}
+\usepackage{zhnumber}
+\usepackage{ctex}
+\title{2022--2023谈之奕线性代数I (H) 期中答案 }
+\author{张晋恺}
+\date{2024年1月25日}
+\begin{document}
+\maketitle
+\leftline{一、}
+初等行变换可化为$ \left(\begin{matrix}  2&-4&5&3&1\\0&0&-7&-5&1\\0&0&0&0&\lambda-3 \end{matrix}\right)$
+故当$\lambda=3$时有解，解得其一般解为\\
+$$\left(\begin{matrix} \dfrac{4}{5}\\0\\0\\-\dfrac{1}{5}\end{matrix}\right)+k_2\left(\begin{matrix} 2\\1\\0\\0\end{matrix}\right)
++k_3\left(\begin{matrix} -\dfrac{2}{5}\\0\\1\\-\dfrac{7}{5}\end{matrix}\right)$$
+\par
+\leftline{二、}
+取$\alpha_2,\alpha_3,\alpha_4,\alpha_5$即可,按列排成矩阵化成简化阶梯矩阵说明或者利用行列式不为0.\par
+\leftline{三、}
+(1)$x_1=x_2,\Rightarrow \ker\sigma=\spa\{ ( 1,1 )\}$,令$\tau=I-\sigma$,则$\tau ( x_1,x_2 )= (x_2,3x_2-2x_1 )$
+取自然基可得
+$$\im \sigma= \spa \{(0,-2),(1,3)\}$$.\par
+(2)该结论不一定成立,证明如下：
+$$
+\ker\tau\subseteq im(I-\tau)\Rightarrow\forall\alpha\in \ker\sigma,\exists\beta,s.t,(I-\tau)(\beta)=\alpha,\\
+\implies I(\beta)-\tau(\beta)=\alpha,\tau(\beta)-\tau^2(\beta)=\tau(\alpha)=0,thus,\tau(\beta)=\tau^2(\beta)
+$$
+故只要证$(I-\tau)(\tau(\gamma))=0\implies\tau(\gamma)=\tau^2(\gamma)$但是，$\gamma$要求是任意的,而$\beta$只是特定的,并不能保证覆盖整个V,事实上第一问的$\tau$就是一个反例.
+\par
+\leftline{四、}
+(1)证明略,题目应改为次数小于3
+设$$f(x)=ax^2+bx+c,f(1)=0\Rightarrow a+b+c=0$$解得$$(a,b,c)=k_1(1,0,-1)+k_2(0,1,-1)$$\\
+故$$W=\spa \{x^2-1,x-1\},\dim W=2$$.\par
+(2)
+证明略,$\ker T$即为第一问的W,$\im T$=$\spa\{1\}$.
+\par
+(3) 二维线性空间任意三个向量线性相关，$f,g,h \in W$ 故线性相关.
+\par
+\leftline{五、}
+(1)错,$\alpha=0,\beta \neq 0$为反例.\par
+(2)错,对于复数域不构成线性空间,因为实数与复数的数乘不封闭于实数.\par
+(3)错,三元向量,$(0,0,1)+(1,0,0)$不封闭于$\mathbf{R^3_1}$.\par
+(4)错,反例与第一问一致.\par
+(5)错,不一定是满射.\par
+(6)对,将$W$的基扩充为$V$的基,构造线性映射将W的基映射为0,扩充的基做恒等变换即可得到要求的线性映射,\\
+即$\sigma\{\alpha_i,\beta_j\}=\{0,\beta_j\}$,对于$\gamma=\Sigma \lambda_i\alpha_i+\Sigma\mu_j\beta_j\in\ker\sigma$易得到$\mu_j=0$,故$\ker\sigma=W$.
+
+
+\end{document}
